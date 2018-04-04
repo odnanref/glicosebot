@@ -1,0 +1,52 @@
+@import models.entities._
+@import facebook.server.message._
+@import org.joda.time.{DateTime, LocalDate}
+
+@(message: String, user: UserProfile, data: Map[LocalDate, Seq[String]])
+
+@defining(play.core.PlayVersion.current) { version =>
+<html lang="pt">
+<head>
+    <meta charset="utf-8" />
+    <title>Glicose, @message @user.first_name @user.last_name</title>
+    <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous"
+    >
+</head>
+<body>
+
+<section id="top">
+  <div class="wrapper">
+      @message<br />
+      @user.first_name @user.last_name
+  </div>
+</section>
+
+<div id="content" class="wrapper doc">
+
+  <h1>Relatório de glicose</h1>
+
+  <table class="table table-bordered" style="width:80%;">
+      <th style="width: 50px;">Data</th>
+      <th>Glicose</th>
+
+      @for(dt <- data) {
+      <tr>
+          <td>@dt._1</td>
+          <td>
+          @for(d <- dt._2 ) {
+            @d &nbsp;
+          }
+          </td>
+      </tr>
+      }
+  </table>
+
+</div>
+
+</body>
+</html>
+
+}
