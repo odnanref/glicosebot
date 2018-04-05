@@ -9,14 +9,15 @@ The code has some tests for someone to check if it runs ok, before to running it
 
 ## Configuration Variables
 The environment variables must be set.
-export REDIS_URL="redis://h:PASSWORD_OF_REDIS_MACHINE@IP_OF_REDIS_MACHINE:PORT_OF_REDIS_MACHINE"
-export DBURLHOST="jdbc:mysql://IP OF DATABASE/glicosebot"
+
+1. export REDIS_URL="redis://h:PASSWORD_OF_REDIS_MACHINE@IP_OF_REDIS_MACHINE:PORT_OF_REDIS_MACHINE"
+2. export DBURLHOST="jdbc:mysql://IP OF DATABASE/glicosebot"
  glicosebot is the database name of the database
-export DBUSERNAME="database user"
-export DBPASSWORD="database password"
-export PAGE_ACCESS_TOKEN="SOME TOKEN SUPPLIED BY FACEBOOK"
-export TOKEN_STRING="TOKEN STRING TO THE FACEBOOK"
-export DOMAIN="domain.localdomain"
+3. export DBUSERNAME="database user"
+4. export DBPASSWORD="database password"
+5. export PAGE_ACCESS_TOKEN="SOME TOKEN SUPPLIED BY FACEBOOK"
+6. export TOKEN_STRING="TOKEN STRING TO THE FACEBOOK"
+7. export DOMAIN="domain.localdomain"
 
 # Notice
 You must whitelist domains to provide attachments links to the end user.
